@@ -1,0 +1,18 @@
+C:\Users\KimoStore\Desktop\New folder (5)\Colonel ahmed abdelrazek\Colonel ahmed abdelrazek\obj\Debug\Colonel ahmed abdelrazek.csproj.AssemblyReference.cache
+C:\Users\KimoStore\Desktop\New folder (5)\Colonel ahmed abdelrazek\Colonel ahmed abdelrazek\obj\Debug\Colonel_ahmed_abdelrazek.Form1.resources
+C:\Users\KimoStore\Desktop\New folder (5)\Colonel ahmed abdelrazek\Colonel ahmed abdelrazek\obj\Debug\Colonel_ahmed_abdelrazek.Properties.Resources.resources
+C:\Users\KimoStore\Desktop\New folder (5)\Colonel ahmed abdelrazek\Colonel ahmed abdelrazek\obj\Debug\Colonel ahmed abdelrazek.csproj.GenerateResource.cache
+C:\Users\KimoStore\Desktop\New folder (5)\Colonel ahmed abdelrazek\Colonel ahmed abdelrazek\obj\Debug\Colonel ahmed abdelrazek.csproj.CoreCompileInputs.cache
+C:\Users\KimoStore\Desktop\New folder (5)\Colonel ahmed abdelrazek\Colonel ahmed abdelrazek\bin\Debug\Colonel ahmed abdelrazek.exe.config
+C:\Users\KimoStore\Desktop\New folder (5)\Colonel ahmed abdelrazek\Colonel ahmed abdelrazek\bin\Debug\Colonel ahmed abdelrazek.exe
+C:\Users\KimoStore\Desktop\New folder (5)\Colonel ahmed abdelrazek\Colonel ahmed abdelrazek\bin\Debug\Colonel ahmed abdelrazek.pdb
+C:\Users\KimoStore\Desktop\New folder (5)\Colonel ahmed abdelrazek\Colonel ahmed abdelrazek\obj\Debug\Colonel_ahmed_abdelrazek.ContentManagerForm.resources
+C:\Users\KimoStore\Desktop\New folder (5)\Colonel ahmed abdelrazek\Colonel ahmed abdelrazek\obj\Debug\Colonel ahmed abdelrazek.exe
+C:\Users\KimoStore\Desktop\New folder (5)\Colonel ahmed abdelrazek\Colonel ahmed abdelrazek\obj\Debug\Colonel ahmed abdelrazek.pdb
+C:\Users\KimoStore\Desktop\New folder (5)\Colonel ahmed abdelrazek\Colonel ahmed abdelrazek\obj\Debug\Colonel_ahmed_abdelrazek.FusoolForm.resources
+C:\Users\KimoStore\Desktop\New folder (5)\Colonel ahmed abdelrazek\Colonel ahmed abdelrazek\obj\Debug\Colonel_ahmed_abdelrazek.FileViewerForm.resources
+C:\Users\KimoStore\Desktop\New folder (5)\Colonel ahmed abdelrazek\Colonel ahmed abdelrazek\bin\Debug\Interop.WMPLib.dll
+C:\Users\KimoStore\Desktop\New folder (5)\Colonel ahmed abdelrazek\Colonel ahmed abdelrazek\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\KimoStore\Desktop\New folder (5)\Colonel ahmed abdelrazek\Colonel ahmed abdelrazek\obj\Debug\Interop.WMPLib.dll
+C:\Users\KimoStore\Desktop\New folder (5)\Colonel ahmed abdelrazek\Colonel ahmed abdelrazek\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\KimoStore\Desktop\New folder (5)\Colonel ahmed abdelrazek\Colonel ahmed abdelrazek\obj\Debug\Colonel ahmed abdelrazek.csproj.ResolveComReference.cache
