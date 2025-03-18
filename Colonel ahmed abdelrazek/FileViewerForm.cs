@@ -168,5 +168,39 @@ namespace Colonel_ahmed_abdelrazek
                 }
             }
         }
+
+        private void btnUploadFile_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Title = "Select a File to Upload";
+                openFileDialog.Filter = "All Files (*.*)|*.*"; // Allow all file types
+                openFileDialog.Multiselect = false; // Allow only one file
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        // Get the selected file path
+                        string selectedFilePath = openFileDialog.FileName;
+
+                        // Generate the destination path inside fusoolPath
+                        string fileName = Path.GetFileName(selectedFilePath);
+                        string destinationPath = Path.Combine(fusoolPath, fileName);
+
+                        // Copy the file to the current directory
+                        File.Copy(selectedFilePath, destinationPath, true);
+
+                        // Refresh the file list
+                        LoadFiles();
+                        MessageBox.Show("File uploaded successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error uploading file: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
     }
 }

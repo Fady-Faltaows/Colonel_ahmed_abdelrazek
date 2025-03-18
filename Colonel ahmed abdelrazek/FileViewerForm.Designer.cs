@@ -30,7 +30,6 @@ namespace Colonel_ahmed_abdelrazek
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FileViewerForm));
             this.lstFiles = new System.Windows.Forms.ListBox();
             this.btnOpenFile = new System.Windows.Forms.Button();
             this.back = new System.Windows.Forms.Button();
@@ -38,6 +37,7 @@ namespace Colonel_ahmed_abdelrazek
             this.btnRenameFile = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnUploadFile = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lstFiles
@@ -110,13 +110,24 @@ namespace Colonel_ahmed_abdelrazek
             this.label1.TabIndex = 6;
             this.label1.Text = "بحث";
             // 
+            // btnUploadFile
+            // 
+            this.btnUploadFile.Location = new System.Drawing.Point(628, 169);
+            this.btnUploadFile.Name = "btnUploadFile";
+            this.btnUploadFile.Size = new System.Drawing.Size(75, 23);
+            this.btnUploadFile.TabIndex = 7;
+            this.btnUploadFile.Text = "اضافة ملف";
+            this.btnUploadFile.UseVisualStyleBackColor = true;
+            this.btnUploadFile.Click += new System.EventHandler(this.btnUploadFile_Click);
+            // 
             // FileViewerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = Properties.Resources.images__3_;
-            this.BackgroundImageLayout = ImageLayout.Stretch;
+            this.BackgroundImage = global::Colonel_ahmed_abdelrazek.Properties.Resources.images__3_;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnUploadFile);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnRenameFile);
@@ -142,5 +153,6 @@ namespace Colonel_ahmed_abdelrazek
         private System.Windows.Forms.Button btnRenameFile;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label label1;
+        private Button btnUploadFile;
     }
 }
