@@ -28,31 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FusoolForm));
-            this.lstFusool = new System.Windows.Forms.ListBox();
             this.btnAddFasl = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnDeleteFasl = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.flpfsl = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnopen = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // lstFusool
-            // 
-            this.lstFusool.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.lstFusool.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.lstFusool.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lstFusool.Font = new System.Drawing.Font("Mongolian Baiti", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lstFusool.FormattingEnabled = true;
-            this.lstFusool.ItemHeight = 40;
-            this.lstFusool.Location = new System.Drawing.Point(12, 12);
-            this.lstFusool.Name = "lstFusool";
-            this.lstFusool.Size = new System.Drawing.Size(394, 320);
-            this.lstFusool.TabIndex = 0;
-            this.lstFusool.DoubleClick += new System.EventHandler(this.lstFusool_DoubleClick);
             // 
             // btnAddFasl
             // 
+            this.btnAddFasl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddFasl.Location = new System.Drawing.Point(702, 42);
             this.btnAddFasl.Name = "btnAddFasl";
             this.btnAddFasl.Size = new System.Drawing.Size(86, 23);
@@ -63,6 +49,7 @@
             // 
             // btnBack
             // 
+            this.btnBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnBack.Location = new System.Drawing.Point(12, 415);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(75, 23);
@@ -73,7 +60,8 @@
             // 
             // btnDeleteFasl
             // 
-            this.btnDeleteFasl.Location = new System.Drawing.Point(702, 97);
+            this.btnDeleteFasl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDeleteFasl.Location = new System.Drawing.Point(702, 71);
             this.btnDeleteFasl.Name = "btnDeleteFasl";
             this.btnDeleteFasl.Size = new System.Drawing.Size(86, 23);
             this.btnDeleteFasl.TabIndex = 3;
@@ -83,7 +71,8 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(702, 153);
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.Location = new System.Drawing.Point(702, 100);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(86, 23);
             this.button2.TabIndex = 4;
@@ -91,18 +80,39 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // flpfsl
+            // 
+            this.flpfsl.AutoScroll = true;
+            this.flpfsl.BackColor = System.Drawing.Color.Transparent;
+            this.flpfsl.Location = new System.Drawing.Point(13, 13);
+            this.flpfsl.Name = "flpfsl";
+            this.flpfsl.Size = new System.Drawing.Size(309, 396);
+            this.flpfsl.TabIndex = 5;
+            // 
+            // btnopen
+            // 
+            this.btnopen.Location = new System.Drawing.Point(702, 13);
+            this.btnopen.Name = "btnopen";
+            this.btnopen.Size = new System.Drawing.Size(86, 23);
+            this.btnopen.TabIndex = 6;
+            this.btnopen.Text = "فتح الفصل";
+            this.btnopen.UseVisualStyleBackColor = true;
+            this.btnopen.Click += new System.EventHandler(this.btnopen_Click);
+            // 
             // FusoolForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = Properties.Resources.images__3_;
+            this.AutoScroll = true;
+            this.BackgroundImage = global::Colonel_ahmed_abdelrazek.Properties.Resources.images__3_;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnopen);
+            this.Controls.Add(this.flpfsl);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnDeleteFasl);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnAddFasl);
-            this.Controls.Add(this.lstFusool);
             this.Name = "FusoolForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "إدارة الفصول";
@@ -112,11 +122,11 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox lstFusool;
         private System.Windows.Forms.Button btnAddFasl;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnDeleteFasl;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.FlowLayoutPanel flpfsl;
+        private System.Windows.Forms.Button btnopen;
     }
 }

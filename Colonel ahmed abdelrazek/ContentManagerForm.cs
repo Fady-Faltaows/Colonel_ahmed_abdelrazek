@@ -13,31 +13,18 @@ namespace Colonel_ahmed_abdelrazek
 {
     public partial class ContentManagerForm : Form
     {
+        private Button selectedBabButton = null;
         private string contentPath = Path.Combine(Directory.GetParent(Directory.GetParent(Directory.GetParent(Application.StartupPath).FullName).FullName).FullName, "Content");
-
-        private void lstAbwab_DrawItem(object sender, DrawItemEventArgs e)
-        {
-            if (e.Index < 0) return;
-
-            // Draw the form's background color (simulates transparency)
-            e.Graphics.FillRectangle(new SolidBrush(this.BackColor), e.Bounds);
-
-            // Draw text
-            e.Graphics.DrawString(lstAbwab.Items[e.Index].ToString(),
-                                  e.Font,
-                                  new SolidBrush(lstAbwab.ForeColor),
-                                  e.Bounds);
-        }
 
         public ContentManagerForm()
         {
             InitializeComponent();
-            LoadAbwab(); // Load existing أبواب when the form opens
+            LoadAbwab(); // Load أبواب as buttons
         }
 
         private void LoadAbwab()
         {
-            lstAbwab.Items.Clear(); // Clear the list first
+            flpAbwab.Controls.Clear(); // Clear existing buttons
 
             if (!Directory.Exists(contentPath))
             {
@@ -47,24 +34,111 @@ namespace Colonel_ahmed_abdelrazek
 
             string[] abwab = Directory.GetDirectories(contentPath);
 
-
             foreach (string bab in abwab)
             {
-                lstAbwab.Items.Add(Path.GetFileName(bab)); // Add folder names to ListBox
+                AddBabButton(Path.GetFileName(bab)); // Add buttons dynamically
             }
         }
 
-
-        private void button1_Click(object sender, EventArgs e)
+        private void AddBabButton(string babName)
         {
-            this.Close(); // Close this form and return to Form1
+            Button babButton = new Button
+            {
+                Text = babName,
+                Width = 250,
+                Height = 50,
+                BackColor = Color.LightBlue,
+                Font = new Font("Arial", 14, FontStyle.Bold),
+                Tag = babName // Store the name for reference
+            };
+
+            babButton.Click += (sender, e) => SelectBab(babButton); // Click to select
+            flpAbwab.Controls.Add(babButton);
+        }
+
+        private void SelectBab(Button babButton)
+        {
+            // Deselect previous button
+            if (selectedBabButton != null)
+            {
+                selectedBabButton.BackColor = Color.LightBlue;
+            }
+
+            // Select new button
+            selectedBabButton = babButton;
+            selectedBabButton.BackColor = Color.LightGreen; // Highlight selection
+        }
+
+        private void OpenBab(string babName)
+        {
+            string babFullPath = Path.Combine(contentPath, babName);
+
+            if (Directory.Exists(babFullPath))
+            {
+                FusoolForm fusoolForm = new FusoolForm(babFullPath);
+                this.Hide();
+                fusoolForm.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+                MessageBox.Show("المجلد غير موجود!", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnAddBab_Click(object sender, EventArgs e)
+        {
+            string newBab = Prompt.ShowDialog("أدخل اسم الباب الجديد:", "إضافة باب");
+
+            if (!string.IsNullOrWhiteSpace(newBab))
+            {
+                string newPath = Path.Combine(contentPath, newBab);
+
+                if (!Directory.Exists(newPath))
+                {
+                    Directory.CreateDirectory(newPath);
+                    AddBabButton(newBab); // Add new button
+                    MessageBox.Show("تمت إضافة الباب بنجاح!", "نجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("هذا الباب موجود بالفعل!", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+
+        }
+
+        private void btnDeleteBab_Click(object sender, EventArgs e)
+        {
+            if (selectedBabButton != null)
+            {
+                string selectedBab = selectedBabButton.Text;
+                DialogResult result = MessageBox.Show($"هل أنت متأكد من حذف الباب '{selectedBab}'؟", "تأكيد الحذف", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (result == DialogResult.Yes)
+                {
+                    string path = Path.Combine(contentPath, selectedBab);
+                    if (Directory.Exists(path))
+                    {
+                        Directory.Delete(path, true);
+                    }
+
+                    flpAbwab.Controls.Remove(selectedBabButton);
+                    selectedBabButton = null; // Clear selection
+                    MessageBox.Show("تم حذف الباب بنجاح!", "نجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else
+            {
+                MessageBox.Show("الرجاء اختيار باب لحذفه.", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (lstAbwab.SelectedItem != null)
+            if (selectedBabButton != null)
             {
-                string oldName = lstAbwab.SelectedItem.ToString();
+                string oldName = selectedBabButton.Text;
                 string newName = Prompt.ShowDialog("أدخل الاسم الجديد للباب:", "تعديل الباب");
 
                 if (!string.IsNullOrWhiteSpace(newName) && newName != oldName)
@@ -74,9 +148,8 @@ namespace Colonel_ahmed_abdelrazek
 
                     if (!Directory.Exists(newPath))
                     {
-                        Directory.Move(oldPath, newPath); // Rename the folder
-                        int index = lstAbwab.SelectedIndex;
-                        lstAbwab.Items[index] = newName; // Update ListBox
+                        Directory.Move(oldPath, newPath);
+                        selectedBabButton.Text = newName; // Update button text
                         MessageBox.Show("تم تعديل اسم الباب بنجاح!", "نجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
@@ -91,76 +164,39 @@ namespace Colonel_ahmed_abdelrazek
             }
         }
 
-        private void btnAddBab_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            string newBab = Prompt.ShowDialog("أدخل اسم الباب الجديد:", "إضافة باب");
-
-            if (!string.IsNullOrWhiteSpace(newBab))
-            {
-                string newPath = Path.Combine(contentPath, newBab);
-
-                if (!Directory.Exists(newPath))
-                {
-                    Directory.CreateDirectory(newPath); // Create new باب as a folder
-                    lstAbwab.Items.Add(newBab); // Add to the ListBox
-                    MessageBox.Show("تمت إضافة الباب بنجاح!", "نجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("هذا الباب موجود بالفعل!", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-            }
+            this.Close(); // Close this form and return to Form1
         }
 
-        private void btnDeleteBab_Click(object sender, EventArgs e)
+
+        private Button GetSelectedButton()
         {
-            if (lstAbwab.SelectedItem != null)
+            foreach (Control control in flpAbwab.Controls)
             {
-                string selectedBab = lstAbwab.SelectedItem.ToString();
-                DialogResult result = MessageBox.Show($"هل أنت متأكد من حذف الباب '{selectedBab}'؟", "تأكيد الحذف", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-                if (result == DialogResult.Yes)
+                if (control is Button button && button.Focused)
                 {
-                    string path = Path.Combine(contentPath, selectedBab);
-                    if (Directory.Exists(path))
-                    {
-                        Directory.Delete(path, true); // Delete the folder and its contents
-                    }
-
-                    lstAbwab.Items.Remove(selectedBab); // Remove from ListBox
-                    MessageBox.Show("تم حذف الباب بنجاح!", "نجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return button;
                 }
+            }
+            return null;
+        }
+    
+
+        private void flpAbwab_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void open_Click(object sender, EventArgs e)
+        {
+            if (selectedBabButton != null)
+            {
+                OpenBab(selectedBabButton.Text);
             }
             else
             {
-                MessageBox.Show("الرجاء اختيار باب لحذفه.", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
-
-        private void lstAbwab_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lstAbwab_DoubleClick_1(object sender, EventArgs e)
-        {
-            if (lstAbwab.SelectedItem != null)
-            {
-                string selectedBab = lstAbwab.SelectedItem.ToString();
-                string babFullPath = Path.Combine(contentPath, selectedBab);
-
-
-                if (Directory.Exists(babFullPath))
-                {
-                    FusoolForm fusoolForm = new FusoolForm(babFullPath);
-                    this.Hide(); // Hide ContentManagerForm
-                    fusoolForm.ShowDialog();
-                    this.Show(); // Show ContentManagerForm again after FusoolForm is closed
-                }
-                else
-                {
-                    MessageBox.Show("المجلد غير موجود!", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                MessageBox.Show("الرجاء اختيار باب لفتحه.", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

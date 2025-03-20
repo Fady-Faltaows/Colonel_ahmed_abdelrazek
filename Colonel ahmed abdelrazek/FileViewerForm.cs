@@ -14,98 +14,112 @@ namespace Colonel_ahmed_abdelrazek
 {
     public partial class FileViewerForm : Form
     {
-        private string fusoolPath; // Store selected فصل path
+        private string selectedPath; // Store selected path
+        private string selectedFilePath; // Store selected file path
+        private Button selectedFileButton; // Track selected file button
+
 
         public FileViewerForm(string path)
         {
             InitializeComponent();
-            fusoolPath = path;
+            selectedPath = path;
             LoadFiles(); // Load files when form opens
-        }
-
-        private void LoadFiles()
-        {
-            lstFiles.Items.Clear(); // Clear list before loading new files
-
-            if (Directory.Exists(fusoolPath))
-            {
-                string[] files = Directory.GetFiles(fusoolPath);
-                foreach (string file in files)
-                {
-                    lstFiles.Items.Add(Path.GetFileName(file)); // Show only file names
-                }
-            }
-            else
-            {
-                MessageBox.Show("المجلد غير موجود!", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnOpenFile_Click(object sender, EventArgs e)
-        {
-            if (lstFiles.SelectedItem != null)
-            {
-                string selectedFile = lstFiles.SelectedItem.ToString();
-                string fullPath = Path.Combine(fusoolPath, selectedFile);
-
-                if (File.Exists(fullPath))
-                {
-                    try
-                    {
-                        Process.Start(new ProcessStartInfo
-                        {
-                            FileName = fullPath,
-                            UseShellExecute = true // Opens file with the default program
-                        });
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show($"حدث خطأ أثناء فتح الملف:\n{ex.Message}", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("الملف غير موجود!", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
-            {
-                MessageBox.Show("الرجاء اختيار ملف لفتحه.", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
         }
 
         private void FileViewerForm_Load(object sender, EventArgs e)
         {
-
+            LoadFiles(); // Ensure files are loaded on form load
         }
 
-        private void back_Click(object sender, EventArgs e)
+        private void LoadFiles()
         {
-            this.Close(); // Close the current form to return to the previous one
+            flpfile.SuspendLayout(); // إيقاف التحديث مؤقتًا لتحسين الأداء
+            flpfile.Controls.Clear();
+
+        
+
+            if (!Directory.Exists(selectedPath))
+            {
+                MessageBox.Show("المجلد غير موجود!", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            string[] files = Directory.GetFiles(selectedPath);
+            foreach (string file in files)
+            {
+                Button btnFile = new Button
+                {
+                    Text = Path.GetFileName(file),
+                    Font = new Font("Tahoma", 12, FontStyle.Bold),
+                    Size = new Size(flpfile.ClientSize.Width - 20, 60),
+                    TextAlign = ContentAlignment.MiddleCenter,
+                    FlatStyle = FlatStyle.Flat,
+                    BackColor = Color.LightBlue,
+                    ForeColor = Color.Black,
+                    FlatAppearance = { BorderSize = 1 },
+                    Tag = file
+                };
+
+                btnFile.Click += (s, e) => SelectFile(file, btnFile);
+                flpfile.Controls.Add(btnFile);
+            }
+
+            flpfile.ResumeLayout(); // استئناف التحديث بعد إضافة جميع الأزرار
+        }
+
+
+
+        private void SelectFile(string filePath, Button clickedButton)
+        {
+            // Reset the previously selected button's appearance
+            if (selectedFileButton != null)
+            {
+                selectedFileButton.BackColor = Color.LightBlue;
+            }
+
+            // Set the new selected button and update appearance
+            selectedFileButton = clickedButton;
+            selectedFileButton.BackColor = Color.DarkBlue; // Highlight selected file
+            selectedFileButton.ForeColor = Color.White;
+
+            // Store the selected file path
+            selectedFilePath = filePath;
+        }
+
+        private void btnOpenFile_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(selectedFilePath) && File.Exists(selectedFilePath))
+            {
+                try
+                {
+                    Process.Start(new ProcessStartInfo { FileName = selectedFilePath, UseShellExecute = true });
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"حدث خطأ أثناء فتح الملف:\n{ex.Message}", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("الرجاء اختيار ملف للفتح.", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void btnDeleteFile_Click(object sender, EventArgs e)
         {
-            if (lstFiles.SelectedItem != null)
+            if (!string.IsNullOrEmpty(selectedFilePath) && File.Exists(selectedFilePath))
             {
-                string selectedFile = lstFiles.SelectedItem.ToString();
-                string fullPath = Path.Combine(fusoolPath, selectedFile);
-
-                DialogResult result = MessageBox.Show($"هل أنت متأكد أنك تريد حذف {selectedFile}؟",
+                DialogResult result = MessageBox.Show($"هل أنت متأكد أنك تريد حذف {Path.GetFileName(selectedFilePath)}؟",
                     "تأكيد الحذف", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                 if (result == DialogResult.Yes)
                 {
                     try
                     {
-                        File.Delete(fullPath);
+                        File.Delete(selectedFilePath);
                         MessageBox.Show("تم الحذف بنجاح!", "نجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadFiles(); // Refresh file list
+                        selectedFilePath = null;
                     }
                     catch (Exception ex)
                     {
@@ -121,29 +135,23 @@ namespace Colonel_ahmed_abdelrazek
 
         private void btnRenameFile_Click(object sender, EventArgs e)
         {
-            if (lstFiles.SelectedItem != null)
+            if (!string.IsNullOrEmpty(selectedFilePath) && File.Exists(selectedFilePath))
             {
-                string selectedFile = lstFiles.SelectedItem.ToString();
-                string fullPath = Path.Combine(fusoolPath, selectedFile);
+                string newName = Prompt.ShowDialog("أدخل الاسم الجديد:", "إعادة تسمية الملف");
 
-                if (File.Exists(fullPath))
+                if (!string.IsNullOrWhiteSpace(newName))
                 {
-                    string newName = Prompt.ShowDialog("أدخل الاسم الجديد:", "إعادة تسمية الملف");
+                    string newPath = Path.Combine(selectedPath, newName);
 
-                    if (!string.IsNullOrWhiteSpace(newName))
+                    try
                     {
-                        string newPath = Path.Combine(fusoolPath, newName);
-
-                        try
-                        {
-                            File.Move(fullPath, newPath);
-                            LoadFiles(); // Refresh file list
-                            MessageBox.Show("تمت إعادة التسمية بنجاح!", "نجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show($"حدث خطأ: {ex.Message}", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
+                        File.Move(selectedFilePath, newPath);
+                        LoadFiles(); // Refresh file list
+                        MessageBox.Show("تمت إعادة التسمية بنجاح!", "نجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"حدث خطأ: {ex.Message}", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
@@ -153,52 +161,42 @@ namespace Colonel_ahmed_abdelrazek
             }
         }
 
-        private void txtSearch_TextChanged(object sender, EventArgs e)
-        {
-            string searchText = txtSearch.Text.ToLower();
-            lstFiles.Items.Clear();
-
-            string[] files = Directory.GetFiles(fusoolPath);
-            foreach (string file in files)
-            {
-                string fileName = Path.GetFileName(file);
-                if (fileName.ToLower().Contains(searchText))
-                {
-                    lstFiles.Items.Add(fileName);
-                }
-            }
-        }
-
         private void btnUploadFile_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
-                openFileDialog.Title = "Select a File to Upload";
-                openFileDialog.Filter = "All Files (*.*)|*.*"; // Allow all file types
-                openFileDialog.Multiselect = false; // Allow only one file
-
+                openFileDialog.Title = "اختر ملفًا للتحميل";
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
+                    string sourceFilePath = openFileDialog.FileName;
+                    string destinationFilePath = Path.Combine(selectedPath, Path.GetFileName(sourceFilePath));
                     try
                     {
-                        // Get the selected file path
-                        string selectedFilePath = openFileDialog.FileName;
-
-                        // Generate the destination path inside fusoolPath
-                        string fileName = Path.GetFileName(selectedFilePath);
-                        string destinationPath = Path.Combine(fusoolPath, fileName);
-
-                        // Copy the file to the current directory
-                        File.Copy(selectedFilePath, destinationPath, true);
-
-                        // Refresh the file list
-                        LoadFiles();
-                        MessageBox.Show("File uploaded successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        File.Copy(sourceFilePath, destinationFilePath, true);
+                        MessageBox.Show("تم تحميل الملف بنجاح!", "نجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadFiles(); // Refresh file list
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show($"Error uploading file: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show($"خطأ أثناء تحميل الملف: {ex.Message}", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
+                }
+            }
+        }
+
+        private void back_Click(object sender, EventArgs e)
+        {
+            this.Close(); // Close the form to go back
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            string searchText = txtSearch.Text.ToLower();
+            foreach (Control control in flpfile.Controls)
+            {
+                if (control is Button btnFile)
+                {
+                    btnFile.Visible = btnFile.Text.ToLower().Contains(searchText);
                 }
             }
         }

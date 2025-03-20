@@ -30,7 +30,6 @@ namespace Colonel_ahmed_abdelrazek
         /// </summary>
         private void InitializeComponent()
         {
-            this.lstFiles = new System.Windows.Forms.ListBox();
             this.btnOpenFile = new System.Windows.Forms.Button();
             this.back = new System.Windows.Forms.Button();
             this.btnDeleteFile = new System.Windows.Forms.Button();
@@ -38,23 +37,12 @@ namespace Colonel_ahmed_abdelrazek
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnUploadFile = new System.Windows.Forms.Button();
+            this.flpfile = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
-            // 
-            // lstFiles
-            // 
-            this.lstFiles.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.lstFiles.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lstFiles.Font = new System.Drawing.Font("Mongolian Baiti", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lstFiles.FormattingEnabled = true;
-            this.lstFiles.ItemHeight = 40;
-            this.lstFiles.Location = new System.Drawing.Point(12, 37);
-            this.lstFiles.Name = "lstFiles";
-            this.lstFiles.Size = new System.Drawing.Size(609, 320);
-            this.lstFiles.TabIndex = 0;
-            this.lstFiles.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // btnOpenFile
             // 
+            this.btnOpenFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnOpenFile.Location = new System.Drawing.Point(627, 81);
             this.btnOpenFile.Name = "btnOpenFile";
             this.btnOpenFile.Size = new System.Drawing.Size(75, 23);
@@ -65,6 +53,7 @@ namespace Colonel_ahmed_abdelrazek
             // 
             // back
             // 
+            this.back.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.back.Location = new System.Drawing.Point(12, 415);
             this.back.Name = "back";
             this.back.Size = new System.Drawing.Size(75, 23);
@@ -75,6 +64,7 @@ namespace Colonel_ahmed_abdelrazek
             // 
             // btnDeleteFile
             // 
+            this.btnDeleteFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDeleteFile.Location = new System.Drawing.Point(627, 110);
             this.btnDeleteFile.Name = "btnDeleteFile";
             this.btnDeleteFile.Size = new System.Drawing.Size(75, 23);
@@ -85,6 +75,7 @@ namespace Colonel_ahmed_abdelrazek
             // 
             // btnRenameFile
             // 
+            this.btnRenameFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRenameFile.Location = new System.Drawing.Point(627, 139);
             this.btnRenameFile.Name = "btnRenameFile";
             this.btnRenameFile.Size = new System.Drawing.Size(75, 23);
@@ -95,6 +86,7 @@ namespace Colonel_ahmed_abdelrazek
             // 
             // txtSearch
             // 
+            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSearch.Location = new System.Drawing.Point(627, 37);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(100, 20);
@@ -103,6 +95,7 @@ namespace Colonel_ahmed_abdelrazek
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(701, 21);
             this.label1.Name = "label1";
@@ -112,13 +105,23 @@ namespace Colonel_ahmed_abdelrazek
             // 
             // btnUploadFile
             // 
-            this.btnUploadFile.Location = new System.Drawing.Point(628, 169);
+            this.btnUploadFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUploadFile.Location = new System.Drawing.Point(627, 169);
             this.btnUploadFile.Name = "btnUploadFile";
             this.btnUploadFile.Size = new System.Drawing.Size(75, 23);
             this.btnUploadFile.TabIndex = 7;
             this.btnUploadFile.Text = "اضافة ملف";
             this.btnUploadFile.UseVisualStyleBackColor = true;
             this.btnUploadFile.Click += new System.EventHandler(this.btnUploadFile_Click);
+            // 
+            // flpfile
+            // 
+            this.flpfile.AutoScroll = true;
+            this.flpfile.BackColor = System.Drawing.Color.Transparent;
+            this.flpfile.Location = new System.Drawing.Point(12, 9);
+            this.flpfile.Name = "flpfile";
+            this.flpfile.Size = new System.Drawing.Size(296, 380);
+            this.flpfile.TabIndex = 7;
             // 
             // FileViewerForm
             // 
@@ -127,6 +130,7 @@ namespace Colonel_ahmed_abdelrazek
             this.BackgroundImage = global::Colonel_ahmed_abdelrazek.Properties.Resources.images__3_;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.flpfile);
             this.Controls.Add(this.btnUploadFile);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtSearch);
@@ -134,7 +138,6 @@ namespace Colonel_ahmed_abdelrazek
             this.Controls.Add(this.btnDeleteFile);
             this.Controls.Add(this.back);
             this.Controls.Add(this.btnOpenFile);
-            this.Controls.Add(this.lstFiles);
             this.Name = "FileViewerForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "المحتوى";
@@ -145,8 +148,6 @@ namespace Colonel_ahmed_abdelrazek
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox lstFiles;
         private System.Windows.Forms.Button btnOpenFile;
         private System.Windows.Forms.Button back;
         private System.Windows.Forms.Button btnDeleteFile;
@@ -154,5 +155,6 @@ namespace Colonel_ahmed_abdelrazek
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label label1;
         private Button btnUploadFile;
+        private FlowLayoutPanel flpfile;
     }
 }

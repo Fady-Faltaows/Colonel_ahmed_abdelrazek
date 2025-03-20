@@ -38,6 +38,9 @@ namespace Colonel_ahmed_abdelrazek
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::Colonel_ahmed_abdelrazek.Properties.Resources.IMG_20230722_WA0009;
             this.pictureBox1.Location = new System.Drawing.Point(36, 12);
@@ -50,9 +53,10 @@ namespace Colonel_ahmed_abdelrazek
             // 
             // Enter
             // 
-            this.Enter.Location = new System.Drawing.Point(713, 415);
+            this.Enter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.Enter.Location = new System.Drawing.Point(652, 402);
             this.Enter.Name = "Enter";
-            this.Enter.Size = new System.Drawing.Size(75, 23);
+            this.Enter.Size = new System.Drawing.Size(136, 36);
             this.Enter.TabIndex = 1;
             this.Enter.Text = "دخول";
             this.Enter.UseVisualStyleBackColor = true;
@@ -60,6 +64,7 @@ namespace Colonel_ahmed_abdelrazek
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Modern No. 20", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

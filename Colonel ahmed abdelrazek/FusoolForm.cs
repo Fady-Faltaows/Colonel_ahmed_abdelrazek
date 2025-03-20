@@ -15,6 +15,7 @@ namespace Colonel_ahmed_abdelrazek
     {
 
         private string babPath;
+        private Button selectedButton = null;
         public FusoolForm(string babPath)
         {
             InitializeComponent();
@@ -25,7 +26,7 @@ namespace Colonel_ahmed_abdelrazek
 
         private void LoadFusool()
         {
-            lstFusool.Items.Clear();
+            flpfsl.Controls.Clear();
 
             if (!Directory.Exists(babPath))
             {
@@ -36,9 +37,32 @@ namespace Colonel_ahmed_abdelrazek
             string[] fusool = Directory.GetDirectories(babPath);
             foreach (string fasl in fusool)
             {
-                lstFusool.Items.Add(Path.GetFileName(fasl));
+                Button btnFasl = new Button
+                {
+                    Text = Path.GetFileName(fasl),
+                    Font = new Font("Tahoma", 12, FontStyle.Bold),
+                    Size = new Size(200, 50),
+                    TextAlign = ContentAlignment.MiddleCenter,
+                    FlatStyle = FlatStyle.Flat,
+                    BackColor = Color.LightBlue,
+                    ForeColor = Color.Black
+                };
+
+                btnFasl.Click += (s, e) => SelectFasl(btnFasl); // Handle selection
+                flpfsl.Controls.Add(btnFasl);
             }
         }
+        private void SelectFasl(Button btnFasl)
+        {
+            // Reset previous selection
+            if (selectedButton != null)
+                selectedButton.BackColor = Color.LightBlue; // Default color
+
+            // Select new فصل
+            selectedButton = btnFasl;
+            selectedButton.BackColor = Color.LightGreen; // Highlight selected
+        }
+
 
         private void btnAddFasl_Click(object sender, EventArgs e)
         {
@@ -50,7 +74,7 @@ namespace Colonel_ahmed_abdelrazek
                 if (!Directory.Exists(newPath))
                 {
                     Directory.CreateDirectory(newPath);
-                    lstFusool.Items.Add(newFasl);
+                    LoadFusool();
                     MessageBox.Show("تمت إضافة الفصل بنجاح!");
                 }
                 else
@@ -62,26 +86,30 @@ namespace Colonel_ahmed_abdelrazek
 
         private void btnDeleteFasl_Click(object sender, EventArgs e)
         {
-            if (lstFusool.SelectedItem != null)
+            if (selectedButton != null)
             {
-                string selectedFasl = lstFusool.SelectedItem.ToString();
-                string path = Path.Combine(babPath, selectedFasl);
-                DialogResult result = MessageBox.Show($"هل أنت متأكد من حذف الفصل '{selectedFasl}'؟", "تأكيد الحذف", MessageBoxButtons.YesNo);
+                string faslName = selectedButton.Text;
+                string path = Path.Combine(babPath, faslName);
+                DialogResult result = MessageBox.Show($"هل أنت متأكد من حذف الفصل '{faslName}'؟", "تأكيد الحذف", MessageBoxButtons.YesNo);
 
                 if (result == DialogResult.Yes && Directory.Exists(path))
                 {
                     Directory.Delete(path, true);
-                    lstFusool.Items.Remove(selectedFasl);
+                    LoadFusool();
                     MessageBox.Show("تم حذف الفصل بنجاح!");
                 }
+            }
+            else
+            {
+                MessageBox.Show("يرجى تحديد فصل أولاً!");
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (lstFusool.SelectedItem != null)
+            if (selectedButton != null)
             {
-                string oldName = lstFusool.SelectedItem.ToString();
+                string oldName = selectedButton.Text;
                 string newName = Prompt.ShowDialog("أدخل الاسم الجديد للفصل:", "تعديل الفصل");
 
                 if (!string.IsNullOrWhiteSpace(newName) && newName != oldName)
@@ -92,7 +120,7 @@ namespace Colonel_ahmed_abdelrazek
                     if (!Directory.Exists(newPath))
                     {
                         Directory.Move(oldPath, newPath);
-                        lstFusool.Items[lstFusool.SelectedIndex] = newName;
+                        LoadFusool();
                         MessageBox.Show("تم تعديل اسم الفصل بنجاح!");
                     }
                     else
@@ -101,7 +129,13 @@ namespace Colonel_ahmed_abdelrazek
                     }
                 }
             }
+            else
+            {
+                MessageBox.Show("يرجى تحديد فصل أولاً!");
+            }
         }
+
+
 
         private void btnBack_Click(object sender, EventArgs e)
         {
@@ -113,24 +147,31 @@ namespace Colonel_ahmed_abdelrazek
 
         }
 
-        private void lstFusool_DoubleClick(object sender, EventArgs e)
+        private void OpenFasl(string faslPath)
         {
-            if (lstFusool.SelectedItem != null)
+            if (Directory.Exists(faslPath))
             {
-                string selectedFasl = lstFusool.SelectedItem.ToString();
-                string faslFullPath = Path.Combine(babPath, selectedFasl);
+                FileViewerForm fileViewer = new FileViewerForm(faslPath);
+                this.Hide();
+                fileViewer.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+                MessageBox.Show("المجلد غير موجود!", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
-                if (Directory.Exists(faslFullPath))
-                {
-                    FileViewerForm fileViewer = new FileViewerForm(faslFullPath);
-                    this.Hide(); // Hide the current form
-                    fileViewer.ShowDialog(); // Open the new form as a modal dialog
-                    this.Close(); // Close the current form after the new form is closed
-                }
-                else
-                {
-                    MessageBox.Show("المجلد غير موجود!", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+        private void btnopen_Click(object sender, EventArgs e)
+        {
+            if (selectedButton != null)
+            {
+                string faslPath = Path.Combine(babPath, selectedButton.Text);
+                OpenFasl(faslPath);
+            }
+            else
+            {
+                MessageBox.Show("يرجى تحديد فصل أولاً!");
             }
         }
     }
