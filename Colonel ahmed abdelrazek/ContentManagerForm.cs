@@ -8,11 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace Colonel_ahmed_abdelrazek
 {
     public partial class ContentManagerForm : Form
     {
+        
         private Button selectedBabButton = null;
         private string contentPath = Path.Combine(Directory.GetParent(Directory.GetParent(Directory.GetParent(Application.StartupPath).FullName).FullName).FullName, "Content");
 
@@ -25,6 +27,7 @@ namespace Colonel_ahmed_abdelrazek
         private void LoadAbwab()
         {
             flpAbwab.Controls.Clear(); // Clear existing buttons
+            
 
             if (!Directory.Exists(contentPath))
             {
@@ -197,6 +200,20 @@ namespace Colonel_ahmed_abdelrazek
             else
             {
                 MessageBox.Show("الرجاء اختيار باب لفتحه.", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btnSound_Click(object sender, EventArgs e)
+        {
+            SoundManager.Toggle(); // Toggle the sound using SoundManager
+
+            if (SoundManager.IsPlaying)
+            {
+                btnSound.Image = Properties.Resources.play; // Change to play icon
+            }
+            else
+            {
+                btnSound.Image = Properties.Resources.mute; // Change to mute icon
             }
         }
     }

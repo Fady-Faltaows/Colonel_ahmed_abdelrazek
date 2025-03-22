@@ -29,6 +29,8 @@ namespace Colonel_ahmed_abdelrazek
         private void FileViewerForm_Load(object sender, EventArgs e)
         {
             LoadFiles(); // Ensure files are loaded on form load
+            SoundManager.Play(); // Play sound when the form loads
+            btnSound.Image = Properties.Resources.play; // Set initial icon
         }
 
         private void LoadFiles()
@@ -199,6 +201,16 @@ namespace Colonel_ahmed_abdelrazek
                     btnFile.Visible = btnFile.Text.ToLower().Contains(searchText);
                 }
             }
+        }
+
+        private void btnSound_Click(object sender, EventArgs e)
+        {
+            SoundManager.Toggle(); // Toggle play/pause
+
+            if (SoundManager.IsPlaying)
+                btnSound.Image = Properties.Resources.play; // Change to playing icon
+            else
+                btnSound.Image = Properties.Resources.mute; // Change to mute icon
         }
     }
 }

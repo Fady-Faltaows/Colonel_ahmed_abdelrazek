@@ -54,14 +54,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Colonel ahmed abdelrazek.exe" size="1404408">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Colonel ahmed abdelrazek.exe" size="6911480">
       <assemblyIdentity name="Colonel ahmed abdelrazek" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>utVc+8Ix5kJY1aO/Am3wh+O94KH7sk5ep9SiLrdc38E=</dsig:DigestValue>
+        <dsig:DigestValue>0C8Gz9HQb4Kuh3/dBZGOXGg3JnJbl263vGluflNKP+A=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -73,7 +73,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>F1Nk5HYegisvXV2/Ibtye56h1DZnijFWnqWLiYqxAME=</dsig:DigestValue>
+        <dsig:DigestValue>XwisnCjUlGoe9vW/K5C8xy2XbiY3qfjSuhfznFsfajo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -84,6 +84,24 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>R+Wg8QGvQVHX8T0ta/qbhH1bXkqY0fRnS3wBV3J0bN8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\mute.png" size="7996">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>YSXD5D32aQX/xqarqt6YxEVx46ARW//Pt/PLIRHBPAM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\play.png" size="7640">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>icmom82fEj5hE/EsjiHjEwq0bK/6gyz6kQ3l9vmIKEQ=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

@@ -34,6 +34,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.flpfsl = new System.Windows.Forms.FlowLayoutPanel();
             this.btnopen = new System.Windows.Forms.Button();
+            this.btnSound = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSound)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAddFasl
@@ -84,9 +86,9 @@
             // 
             this.flpfsl.AutoScroll = true;
             this.flpfsl.BackColor = System.Drawing.Color.Transparent;
-            this.flpfsl.Location = new System.Drawing.Point(13, 13);
+            this.flpfsl.Location = new System.Drawing.Point(13, 42);
             this.flpfsl.Name = "flpfsl";
-            this.flpfsl.Size = new System.Drawing.Size(309, 396);
+            this.flpfsl.Size = new System.Drawing.Size(309, 367);
             this.flpfsl.TabIndex = 5;
             // 
             // btnopen
@@ -99,6 +101,18 @@
             this.btnopen.UseVisualStyleBackColor = true;
             this.btnopen.Click += new System.EventHandler(this.btnopen_Click);
             // 
+            // btnSound
+            // 
+            this.btnSound.BackColor = System.Drawing.Color.Transparent;
+            this.btnSound.Image = global::Colonel_ahmed_abdelrazek.Properties.Resources.play;
+            this.btnSound.Location = new System.Drawing.Point(12, 11);
+            this.btnSound.Name = "btnSound";
+            this.btnSound.Size = new System.Drawing.Size(29, 25);
+            this.btnSound.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnSound.TabIndex = 7;
+            this.btnSound.TabStop = false;
+            this.btnSound.Click += new System.EventHandler(this.btnSound_Click);
+            // 
             // FusoolForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -107,6 +121,7 @@
             this.BackgroundImage = global::Colonel_ahmed_abdelrazek.Properties.Resources.images__3_;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnSound);
             this.Controls.Add(this.btnopen);
             this.Controls.Add(this.flpfsl);
             this.Controls.Add(this.button2);
@@ -117,6 +132,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "إدارة الفصول";
             this.Load += new System.EventHandler(this.FusoolForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.btnSound)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -128,5 +144,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.FlowLayoutPanel flpfsl;
         private System.Windows.Forms.Button btnopen;
+        private System.Windows.Forms.PictureBox btnSound;
     }
 }

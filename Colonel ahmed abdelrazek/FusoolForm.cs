@@ -105,6 +105,8 @@ namespace Colonel_ahmed_abdelrazek
             }
         }
 
+        
+
         private void button2_Click(object sender, EventArgs e)
         {
             if (selectedButton != null)
@@ -144,7 +146,8 @@ namespace Colonel_ahmed_abdelrazek
 
         private void FusoolForm_Load(object sender, EventArgs e)
         {
-
+            SoundManager.Play(); // Play sound when the form loads
+            btnSound.Image = Properties.Resources.play; // Set initial icon
         }
 
         private void OpenFasl(string faslPath)
@@ -173,6 +176,16 @@ namespace Colonel_ahmed_abdelrazek
             {
                 MessageBox.Show("يرجى تحديد فصل أولاً!");
             }
+        }
+
+        private void btnSound_Click(object sender, EventArgs e)
+        {
+            SoundManager.Toggle(); // Toggle play/pause
+
+            if (SoundManager.IsPlaying)
+                btnSound.Image = Properties.Resources.play; // Change to playing icon
+            else
+                btnSound.Image = Properties.Resources.mute; // Change to mute icon
         }
     }
 }

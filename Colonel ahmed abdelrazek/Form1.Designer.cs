@@ -33,7 +33,9 @@ namespace Colonel_ahmed_abdelrazek
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Enter = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnSound = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSound)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -75,6 +77,18 @@ namespace Colonel_ahmed_abdelrazek
             this.label1.TabIndex = 3;
             this.label1.Text = "قيادة المنشآت البحرية";
             // 
+            // btnSound
+            // 
+            this.btnSound.BackColor = System.Drawing.Color.Transparent;
+            this.btnSound.Image = global::Colonel_ahmed_abdelrazek.Properties.Resources.play;
+            this.btnSound.Location = new System.Drawing.Point(12, 9);
+            this.btnSound.Name = "btnSound";
+            this.btnSound.Size = new System.Drawing.Size(29, 25);
+            this.btnSound.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnSound.TabIndex = 4;
+            this.btnSound.TabStop = false;
+            this.btnSound.Click += new System.EventHandler(this.btnSound_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -82,6 +96,7 @@ namespace Colonel_ahmed_abdelrazek
             this.BackgroundImage = global::Colonel_ahmed_abdelrazek.Properties.Resources.images__3_;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnSound);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Enter);
             this.Controls.Add(this.pictureBox1);
@@ -90,6 +105,7 @@ namespace Colonel_ahmed_abdelrazek
             this.Text = "الرئيسية";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSound)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -100,6 +116,7 @@ namespace Colonel_ahmed_abdelrazek
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button Enter;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox btnSound;
     }
 }
 
