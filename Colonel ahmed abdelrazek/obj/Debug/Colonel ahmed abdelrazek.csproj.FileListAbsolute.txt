@@ -1,0 +1,88 @@
+C:\Users\KimoStore\Desktop\New folder (5)\Colonel ahmed abdelrazek\Colonel ahmed abdelrazek\obj\Debug\Colonel ahmed abdelrazek.csproj.AssemblyReference.cache
+C:\Users\KimoStore\Desktop\New folder (5)\Colonel ahmed abdelrazek\Colonel ahmed abdelrazek\obj\Debug\Colonel_ahmed_abdelrazek.Form1.resources
+C:\Users\KimoStore\Desktop\New folder (5)\Colonel ahmed abdelrazek\Colonel ahmed abdelrazek\obj\Debug\Colonel_ahmed_abdelrazek.Properties.Resources.resources
+C:\Users\KimoStore\Desktop\New folder (5)\Colonel ahmed abdelrazek\Colonel ahmed abdelrazek\obj\Debug\Colonel ahmed abdelrazek.csproj.GenerateResource.cache
+C:\Users\KimoStore\Desktop\New folder (5)\Colonel ahmed abdelrazek\Colonel ahmed abdelrazek\obj\Debug\Colonel ahmed abdelrazek.csproj.CoreCompileInputs.cache
+C:\Users\KimoStore\Desktop\New folder (5)\Colonel ahmed abdelrazek\Colonel ahmed abdelrazek\bin\Debug\Colonel ahmed abdelrazek.exe.config
+C:\Users\KimoStore\Desktop\New folder (5)\Colonel ahmed abdelrazek\Colonel ahmed abdelrazek\bin\Debug\Colonel ahmed abdelrazek.exe
+C:\Users\KimoStore\Desktop\New folder (5)\Colonel ahmed abdelrazek\Colonel ahmed abdelrazek\bin\Debug\Colonel ahmed abdelrazek.pdb
+C:\Users\KimoStore\Desktop\New folder (5)\Colonel ahmed abdelrazek\Colonel ahmed abdelrazek\obj\Debug\Colonel_ahmed_abdelrazek.ContentManagerForm.resources
+C:\Users\KimoStore\Desktop\New folder (5)\Colonel ahmed abdelrazek\Colonel ahmed abdelrazek\obj\Debug\Colonel ahmed abdelrazek.exe
+C:\Users\KimoStore\Desktop\New folder (5)\Colonel ahmed abdelrazek\Colonel ahmed abdelrazek\obj\Debug\Colonel ahmed abdelrazek.pdb
+C:\Users\KimoStore\Desktop\New folder (5)\Colonel ahmed abdelrazek\Colonel ahmed abdelrazek\obj\Debug\Colonel_ahmed_abdelrazek.FusoolForm.resources
+C:\Users\KimoStore\Desktop\New folder (5)\Colonel ahmed abdelrazek\Colonel ahmed abdelrazek\obj\Debug\Colonel_ahmed_abdelrazek.FileViewerForm.resources
+C:\Users\KimoStore\Desktop\New folder (5)\Colonel ahmed abdelrazek\Colonel ahmed abdelrazek\bin\Debug\Interop.WMPLib.dll
+C:\Users\KimoStore\Desktop\New folder (5)\Colonel ahmed abdelrazek\Colonel ahmed abdelrazek\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\KimoStore\Desktop\New folder (5)\Colonel ahmed abdelrazek\Colonel ahmed abdelrazek\obj\Debug\Interop.WMPLib.dll
+C:\Users\KimoStore\Desktop\New folder (5)\Colonel ahmed abdelrazek\Colonel ahmed abdelrazek\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\KimoStore\Desktop\New folder (5)\Colonel ahmed abdelrazek\Colonel ahmed abdelrazek\obj\Debug\Colonel ahmed abdelrazek.csproj.ResolveComReference.cache
+C:\Users\KimoStore\Desktop\New folder (5)\Colonel ahmed abdelrazek\Colonel ahmed abdelrazek\bin\Debug\Colonel ahmed abdelrazek.exe.manifest
+C:\Users\KimoStore\Desktop\New folder (5)\Colonel ahmed abdelrazek\Colonel ahmed abdelrazek\bin\Debug\Colonel ahmed abdelrazek.application
+C:\Users\KimoStore\Desktop\New folder (5)\Colonel ahmed abdelrazek\Colonel ahmed abdelrazek\obj\Debug\Colonel ahmed abdelrazek.exe.manifest
+C:\Users\KimoStore\Desktop\New folder (5)\Colonel ahmed abdelrazek\Colonel ahmed abdelrazek\obj\Debug\Colonel ahmed abdelrazek.application
+D:\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\bin\Debug\Colonel ahmed abdelrazek.exe.config
+D:\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\bin\Debug\Colonel ahmed abdelrazek.exe.manifest
+D:\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\bin\Debug\Colonel ahmed abdelrazek.application
+D:\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\bin\Debug\Colonel ahmed abdelrazek.exe
+D:\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\bin\Debug\Colonel ahmed abdelrazek.pdb
+D:\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\bin\Debug\Interop.WMPLib.dll
+D:\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\bin\Debug\AxInterop.WMPLib.dll
+D:\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\obj\Debug\Colonel ahmed abdelrazek.csproj.AssemblyReference.cache
+D:\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\obj\Debug\Interop.WMPLib.dll
+D:\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\obj\Debug\AxInterop.WMPLib.dll
+D:\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\obj\Debug\Colonel ahmed abdelrazek.csproj.ResolveComReference.cache
+D:\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\obj\Debug\Colonel_ahmed_abdelrazek.ContentManagerForm.resources
+D:\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\obj\Debug\Colonel_ahmed_abdelrazek.FileViewerForm.resources
+D:\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\obj\Debug\Colonel_ahmed_abdelrazek.Form1.resources
+D:\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\obj\Debug\Colonel_ahmed_abdelrazek.FusoolForm.resources
+D:\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\obj\Debug\Colonel_ahmed_abdelrazek.Properties.Resources.resources
+D:\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\obj\Debug\Colonel ahmed abdelrazek.csproj.GenerateResource.cache
+D:\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\obj\Debug\Colonel ahmed abdelrazek.csproj.CoreCompileInputs.cache
+D:\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\obj\Debug\Colonel ahmed abdelrazek.exe.manifest
+D:\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\obj\Debug\Colonel ahmed abdelrazek.application
+D:\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\obj\Debug\Colonel ahmed abdelrazek.exe
+D:\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\obj\Debug\Colonel ahmed abdelrazek.pdb
+C:\Users\KimoStore\Desktop\last edit\last edit\last edit\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\bin\Debug\Colonel ahmed abdelrazek.exe.config
+C:\Users\KimoStore\Desktop\last edit\last edit\last edit\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\bin\Debug\Colonel ahmed abdelrazek.exe.manifest
+C:\Users\KimoStore\Desktop\last edit\last edit\last edit\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\bin\Debug\Colonel ahmed abdelrazek.application
+C:\Users\KimoStore\Desktop\last edit\last edit\last edit\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\bin\Debug\Colonel ahmed abdelrazek.exe
+C:\Users\KimoStore\Desktop\last edit\last edit\last edit\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\bin\Debug\Colonel ahmed abdelrazek.pdb
+C:\Users\KimoStore\Desktop\last edit\last edit\last edit\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\bin\Debug\Interop.WMPLib.dll
+C:\Users\KimoStore\Desktop\last edit\last edit\last edit\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\KimoStore\Desktop\last edit\last edit\last edit\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\obj\Debug\Colonel ahmed abdelrazek.csproj.AssemblyReference.cache
+C:\Users\KimoStore\Desktop\last edit\last edit\last edit\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\obj\Debug\Interop.WMPLib.dll
+C:\Users\KimoStore\Desktop\last edit\last edit\last edit\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\KimoStore\Desktop\last edit\last edit\last edit\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\obj\Debug\Colonel ahmed abdelrazek.csproj.ResolveComReference.cache
+C:\Users\KimoStore\Desktop\last edit\last edit\last edit\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\obj\Debug\Colonel_ahmed_abdelrazek.ContentManagerForm.resources
+C:\Users\KimoStore\Desktop\last edit\last edit\last edit\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\obj\Debug\Colonel_ahmed_abdelrazek.FileViewerForm.resources
+C:\Users\KimoStore\Desktop\last edit\last edit\last edit\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\obj\Debug\Colonel_ahmed_abdelrazek.Form1.resources
+C:\Users\KimoStore\Desktop\last edit\last edit\last edit\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\obj\Debug\Colonel_ahmed_abdelrazek.FusoolForm.resources
+C:\Users\KimoStore\Desktop\last edit\last edit\last edit\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\obj\Debug\Colonel_ahmed_abdelrazek.Properties.Resources.resources
+C:\Users\KimoStore\Desktop\last edit\last edit\last edit\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\obj\Debug\Colonel ahmed abdelrazek.csproj.GenerateResource.cache
+C:\Users\KimoStore\Desktop\last edit\last edit\last edit\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\obj\Debug\Colonel ahmed abdelrazek.csproj.CoreCompileInputs.cache
+C:\Users\KimoStore\Desktop\last edit\last edit\last edit\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\obj\Debug\Colonel ahmed abdelrazek.exe.manifest
+C:\Users\KimoStore\Desktop\last edit\last edit\last edit\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\obj\Debug\Colonel ahmed abdelrazek.application
+C:\Users\KimoStore\Desktop\last edit\last edit\last edit\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\obj\Debug\Colonel ahmed abdelrazek.exe
+C:\Users\KimoStore\Desktop\last edit\last edit\last edit\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\obj\Debug\Colonel ahmed abdelrazek.pdb
+E:\Projects\El gindy Project\last edit\last edit\last edit\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\bin\Debug\Colonel ahmed abdelrazek.exe.config
+E:\Projects\El gindy Project\last edit\last edit\last edit\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\bin\Debug\Colonel ahmed abdelrazek.exe.manifest
+E:\Projects\El gindy Project\last edit\last edit\last edit\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\bin\Debug\Colonel ahmed abdelrazek.application
+E:\Projects\El gindy Project\last edit\last edit\last edit\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\bin\Debug\Colonel ahmed abdelrazek.exe
+E:\Projects\El gindy Project\last edit\last edit\last edit\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\bin\Debug\Colonel ahmed abdelrazek.pdb
+E:\Projects\El gindy Project\last edit\last edit\last edit\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\bin\Debug\Interop.WMPLib.dll
+E:\Projects\El gindy Project\last edit\last edit\last edit\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\bin\Debug\AxInterop.WMPLib.dll
+E:\Projects\El gindy Project\last edit\last edit\last edit\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\obj\Debug\Colonel ahmed abdelrazek.csproj.AssemblyReference.cache
+E:\Projects\El gindy Project\last edit\last edit\last edit\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\obj\Debug\Interop.WMPLib.dll
+E:\Projects\El gindy Project\last edit\last edit\last edit\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\obj\Debug\AxInterop.WMPLib.dll
+E:\Projects\El gindy Project\last edit\last edit\last edit\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\obj\Debug\Colonel ahmed abdelrazek.csproj.ResolveComReference.cache
+E:\Projects\El gindy Project\last edit\last edit\last edit\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\obj\Debug\Colonel_ahmed_abdelrazek.ContentManagerForm.resources
+E:\Projects\El gindy Project\last edit\last edit\last edit\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\obj\Debug\Colonel_ahmed_abdelrazek.FileViewerForm.resources
+E:\Projects\El gindy Project\last edit\last edit\last edit\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\obj\Debug\Colonel_ahmed_abdelrazek.Form1.resources
+E:\Projects\El gindy Project\last edit\last edit\last edit\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\obj\Debug\Colonel_ahmed_abdelrazek.FusoolForm.resources
+E:\Projects\El gindy Project\last edit\last edit\last edit\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\obj\Debug\Colonel_ahmed_abdelrazek.Properties.Resources.resources
+E:\Projects\El gindy Project\last edit\last edit\last edit\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\obj\Debug\Colonel ahmed abdelrazek.csproj.GenerateResource.cache
+E:\Projects\El gindy Project\last edit\last edit\last edit\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\obj\Debug\Colonel ahmed abdelrazek.csproj.CoreCompileInputs.cache
+E:\Projects\El gindy Project\last edit\last edit\last edit\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\obj\Debug\Colonel ahmed abdelrazek.exe.manifest
+E:\Projects\El gindy Project\last edit\last edit\last edit\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\obj\Debug\Colonel ahmed abdelrazek.application
+E:\Projects\El gindy Project\last edit\last edit\last edit\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\obj\Debug\Colonel ahmed abdelrazek.exe
+E:\Projects\El gindy Project\last edit\last edit\last edit\Colonel_ahmed_abdelrazek-master\Colonel ahmed abdelrazek\obj\Debug\Colonel ahmed abdelrazek.pdb
